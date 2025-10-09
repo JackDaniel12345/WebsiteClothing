@@ -2,9 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Laundry Service Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+    <header>
+        <h1>Clothing Laundry Service Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#form-section">Order Tracking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <!-- Laundry Order Form -->
+        <section id="form-section">
+            <h2>Enter Laundry Order Details</h2>
+            <form id="laundry-form">
+                <label for="customer-name">Customer Name:</label>
+                <input type="text" id="customer-name" name="customer-name" required>
+
+                <label for="laundry-items">Laundry Items:</label>
+                <input type="text" id="laundry-items" name="laundry-items" required>
+
+                <label for="service-type">Service Type:</label>
+                <select id="service-type" name="service-type">
+                    <option value="Wash Only">Wash Only</option>
+                    <option value="Wash & Fold">Wash & Fold</option>
+                    <option value="Dry Cleaning">Dry Cleaning</option>
+                </select>
+
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="date" id="pickup-date" name="pickup-date" required>
+
+                <label for="status">Order Status:</label>
+                <select id="status" name="status">
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Picked Up">Picked Up</option>
+                </select>
+
+                <button type="submit">Add Order</button>
+            </form>
+        </section>
+
+        <!-- Tracker Section -->
+        <section id="tracker-section">
+            <h2>Current Orders</h2>
+            <table id="orders-table">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Laundry Items</th>
+                        <th>Service Type</th>
+                        <th>Pickup Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Orders will appear here -->
+                </tbody>
+            </table>
+        </section>
+
+        <p>&copy; 2025 Laundry Service Tracker. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Handle Contact Form Submission
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent page reload
+
+    const contactName = document.getElementById('contact-name').value;
+    const contactEmail = document.getElementById('contact-email').value;
+    const contactMessage = document.getElementById('contact-message').value;
+
+    console.log('Contact form submitted:', { contactName, contactEmail, contactMessage });
+
+    alert('Your message has been sent! We will get back to you shortly.');
+    e.target.reset(); // Reset form after submission
+});
+
+        // Function to Add Order to Table
+        function addOrderToTable(order) {
+            const tableBody = document.getElementById('orders-table').getElementsByTagName('tbody')[0];
+            const newRow = tableBody.insertRow();
+
+            newRow.innerHTML = `
+                <td>${order.customerName}</td>
+                <td>${order.laundryItems}</td>
+                <td>${order.serviceType}</td>
+                <td>${order.pickupDate}</td>
+                <td>${order.status}</td>
+            `;
+        }
+
+        // Handle Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent page reload
+
+            const contactName = document.getElementById('contact-name').value;
+            const contactEmail = document.getElementById('contact-email').value;
+            const contactMessage = document.getElementById('contact-message').value;
+
+            // Here you could send the data to a server
+            console.log('Contact form submitted:', { contactName, contactEmail, contactMessage });
+
+            alert('Your message has been sent! We will get back to you shortly.');
+            e.target.reset(); // Reset form after submission
+        });
+    </script>
 </body>
 </html>

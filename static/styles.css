@@ -1,0 +1,161 @@
+/* === General Styles === */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+/* === Header Section === */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* === Navigation Menu === */
+nav ul {
+    list-style: none;
+    margin: 15px 0 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #d1ffd6;
+}
+
+/* === Section Titles === */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* === Laundry Form Section === */
+#form-section {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#form-section label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+#form-section input,
+#form-section select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#form-section button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form-section button:hover {
+    background-color: #45a049;
+}
+
+/* === Tracker Section === */
+#tracker-section {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+#orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#orders-table th, #orders-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+#orders-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#orders-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#orders-table tr:hover {
+    background-color: #e8f5e9;
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 40px;
+    font-size: 14px;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    #form-section, #tracker-section {
+        width: 90%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+}
