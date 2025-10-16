@@ -1,18 +1,23 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
-app = flask(_name_)
+app = Flask(__name__)
 
-@app.route("/")
+# Simulated in-memory database (for demo purposes)
+laundry_items = []
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        item = {
+            'name': request.form['name'],
+            'clothing_type': request.form['clothing_type'],
+            'quantity': request.form['quantity'],
+            'status': 'Pending Pickup'
+        }
+        laundry_items.append(item)
+        return redirect(url_for('index'))
 
-@app.route("/about")
-def about():
-    return render_template('index.html')
+    return render_template('index.html', items=laundry_items)
 
-@app.route("/contact")
-def index():
-    return render_template('contact.html')
-
-if name == '_main_':
-    app.run(debug=true)
+if __name__ == '__main__':
+    app.run(debug=True)
